@@ -32,13 +32,14 @@
       filter: brightness(1.18) contrast(1.22) saturate(1.18);
     }
 
-    /* الصورة الشخصية (من غير أي تعديل) */
+    /* الصورة الشخصية */
     img.profile {
       width: 170px;
       height: 170px;
       border-radius: 50%;
       border: 4px solid white;
       margin-bottom: 20px;
+      cursor: pointer;
     }
 
     h1 {
@@ -60,7 +61,7 @@
       font-weight: 600;
     }
 
-    /* الروابط – الخط أوضح وأتقل */
+    /* الروابط */
     a.link {
       display: flex;
       align-items: center;
@@ -75,7 +76,6 @@
       border-radius: 16px;
       font-size: 20px;
       font-weight: 800;
-      letter-spacing: 0.5px;
       transition: 0.3s;
       backdrop-filter: blur(4px);
       text-shadow: 0 2px 4px rgba(0,0,0,0.6);
@@ -90,13 +90,35 @@
     i {
       font-size: 24px;
     }
+
+    /* نافذة الصورة العائمة */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
   </style>
 </head>
 
 <body>
 
   <!-- الصورة الشخصية -->
-  <img class="profile" src="https://i.ibb.co/YGGK5wj/IMG-20251005-003036-067.jpg" alt="Hamoksha">
+  <img
+    class="profile"
+    src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg"
+    alt="Hamoksha"
+    onclick="openLightbox()"
+  >
 
   <!-- الاسم -->
   <h1 id="name"></h1>
@@ -129,6 +151,11 @@
     <i class="fa-regular fa-envelope"></i> صارحني
   </a>
 
+  <!-- نافذة عائمة للصورة -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
+  </div>
+
   <!-- تأثير كتابة الاسم -->
   <script>
     const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
@@ -149,6 +176,14 @@
       }
     }
     type();
+
+    function openLightbox() {
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
   </script>
 
 </body>
