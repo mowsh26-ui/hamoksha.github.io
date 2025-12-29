@@ -7,7 +7,7 @@
   <!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- خط -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -17,7 +17,7 @@
       text-align: center;
       color: white;
 
-      /* خلفية واضحة جدًا */
+      /* خلفية واضحة */
       background:
         linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10)),
         url("https://i.ibb.co/hRVk0MVV/IMG.jpg");
@@ -29,10 +29,10 @@
       min-height: 100vh;
       padding: 50px 20px;
 
-      /* تحسين الصورة */
       filter: brightness(1.18) contrast(1.22) saturate(1.18);
     }
 
+    /* الصورة الشخصية (من غير أي تعديل) */
     img.profile {
       width: 170px;
       height: 170px;
@@ -42,11 +42,11 @@
     }
 
     h1 {
-      font-size: 38px;
+      font-size: 40px;
       margin: 15px 0;
-      min-height: 50px;
+      min-height: 55px;
       letter-spacing: 2px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
     }
 
     p {
@@ -57,32 +57,38 @@
       background: rgba(0,0,0,0.25);
       padding: 15px;
       border-radius: 12px;
+      font-weight: 600;
     }
 
+    /* الروابط – الخط أوضح وأتقل */
     a.link {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      width: 270px;
-      margin: 10px auto;
-      padding: 14px;
-      background: rgba(255,255,255,0.18);
+      gap: 14px;
+      width: 280px;
+      margin: 12px auto;
+      padding: 15px;
+      background: rgba(255,255,255,0.22);
       color: white;
       text-decoration: none;
-      border-radius: 14px;
-      font-size: 18px;
+      border-radius: 16px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
       transition: 0.3s;
       backdrop-filter: blur(4px);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
 
     a.link:hover {
       background: white;
       color: black;
+      text-shadow: none;
     }
 
     i {
-      font-size: 22px;
+      font-size: 24px;
     }
   </style>
 </head>
