@@ -1,133 +1,141 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<title>𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</title>
+  <meta charset="UTF-8">
+  <title>HaMoKsHa</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
 
-<style>
-* {
-  box-sizing: border-box;
-}
+    body {
+      height: 100vh;
+      background: 
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("https://i.ibb.co/hRVk0MVV/IMG.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
-  direction: rtl;
-  text-align: center;
-  color: white;
-  background:
-    linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-    url("https://i.ibb.co/hRVk0MVV/IMG.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  padding: 50px 20px;
-}
+    .card {
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
+      border-radius: 20px;
+      width: 320px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.2);
+    }
 
-/* الصورة الشخصية */
-.profile {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-bottom: 20px;
-  cursor: pointer;
-  z-index: 5;
-  position: relative;
-}
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      cursor: pointer;
+    }
 
-/* الاسم */
-h1 {
-  font-size: 40px;
-  margin: 15px 0;
-  min-height: 55px;
-}
+    h1 {
+      margin: 20px 0;
+      font-size: 26px;
+      min-height: 35px;
+      letter-spacing: 2px;
+    }
 
-/* الروابط */
-a.link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  width: 280px;
-  margin: 12px auto;
-  padding: 15px;
-  background: rgba(255,255,255,0.22);
-  color: white;
-  text-decoration: none;
-  border-radius: 16px;
-  font-size: 20px;
-  font-weight: 800;
-}
+    .links a {
+      display: block;
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      background: linear-gradient(45deg, #ff0057, #ff7b00);
+      transition: 0.3s;
+    }
 
-/* اللايت بوكس */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  touch-action: none;
-}
+    .links a:hover {
+      transform: scale(1.05);
+    }
 
-.lightbox img {
-  max-width: 92%;
-  max-height: 92%;
-  border-radius: 14px;
-}
-</style>
+    /* صورة عائمة */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #fff;
+    }
+  </style>
 </head>
 
 <body>
 
-<img
-  class="profile"
-  src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg"
-  onclick="openLightbox()"
->
+  <div class="card">
+    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg"
+         class="profile-img"
+         onclick="openImg()">
 
-<h1 id="name"></h1>
+    <h1 id="name"></h1>
 
-<a class="link" href="#">لينك تجريبي</a>
+    <div class="links">
+      <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
+        Instagram
+      </a>
 
-<!-- لايت بوكس -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
-  <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
-</div>
+      <a href="https://wa.me/201285275367?text=حموكشه✨♥" target="_blank">
+        WhatsApp
+      </a>
+    </div>
+  </div>
 
-<script>
-const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
-const el = document.getElementById("name");
-let i = 0;
+  <!-- الصورة العائمة -->
+  <div class="overlay" id="overlay" onclick="closeImg()">
+    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
+  </div>
 
-function type() {
-  if (i < text.length) {
-    el.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 130);
-  }
-}
+  <script>
+    // كتابة الاسم حرف حرف
+    const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
+    let i = 0;
+    const speed = 180;
+    const nameEl = document.getElementById("name");
 
-type();
+    function typeWriter() {
+      if (i < text.length) {
+        nameEl.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter();
 
-function openLightbox() {
-  document.getElementById("lightbox").style.display = "flex";
-  document.body.style.overflow = "hidden";
-}
+    function openImg() {
+      document.getElementById("overlay").style.display = "flex";
+    }
 
-function closeLightbox(e) {
-  if (e.target.id === "lightbox") {
-    document.getElementById("lightbox").style.display = "none";
-    document.body.style.overflow = "";
-  }
-}
-</script>
+    function closeImg() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
