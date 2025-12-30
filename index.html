@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HaMoKsHa</title>
 
-<!-- أيقونات Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -18,18 +17,29 @@
 
 body{
     min-height:100vh;
-    background-image: url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color:#000;
+    background-image:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:contain; /* 👈 الصورة أصغر وواضحة */
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
+/* طبقة تحسين الوضوح */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:inherit;
+    filter: contrast(1.15) brightness(1.08) saturate(1.1);
+    z-index:-1;
+}
+
 .overlay{
-    background: rgba(0,0,0,0.35);
-    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(3px);
     padding:30px 25px;
     border-radius:18px;
     width:90%;
@@ -39,13 +49,12 @@ body{
 
 #name{
     color:#fff;
-    font-size:28px;
+    font-size:26px;
     font-weight:bold;
-    margin-bottom:25px;
+    margin-bottom:22px;
     letter-spacing:2px;
 }
 
-/* الزر */
 .link{
     display:flex;
     align-items:center;
@@ -78,24 +87,21 @@ body{
 <div class="overlay">
     <div id="name">𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</div>
 
-    <a class="link" href="#">
-        <i class="fa-brands fa-facebook"></i>
-        فيسبوك
+    <a class="link" href="https://www.facebook.com">
+        <i class="fa-brands fa-facebook"></i> فيسبوك
     </a>
 
-    <a class="link" href="#">
-        <i class="fa-brands fa-instagram"></i>
-        إنستجرام
+    <a class="link" href="https://www.instagram.com">
+        <i class="fa-brands fa-instagram"></i> إنستجرام
     </a>
 
-    <a class="link" href="#">
-        <i class="fa-brands fa-telegram"></i>
-        تليجرام
+    <a class="link" href="https://t.me">
+        <i class="fa-brands fa-telegram"></i> تليجرام
     </a>
 
-    <a class="link" href="#">
-        <i class="fa-brands fa-whatsapp"></i>
-        واتساب
+    <!-- ✅ صارحني شغال -->
+    <a class="link" href="https://sarhne.com">
+        <i class="fa-solid fa-heart"></i> صارحني
     </a>
 </div>
 
