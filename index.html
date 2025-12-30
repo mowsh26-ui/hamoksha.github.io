@@ -10,104 +10,80 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Arial', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
 }
 
 body{
-    min-height:100vh;
-    background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  height:100vh;
+  background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .overlay{
-    width:100%;
-    min-height:100vh;
-    background:rgba(0,0,0,0.45);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.card{
-    width:90%;
-    max-width:400px;
-    background:rgba(0,0,0,0.35);
-    border-radius:25px;
-    padding:25px 15px;
-    text-align:center;
-    backdrop-filter: blur(6px);
+  width:90%;
+  max-width:400px;
+  background:rgba(0,0,0,0.55);
+  border-radius:25px;
+  padding:25px 20px;
+  text-align:center;
+  backdrop-filter: blur(6px);
 }
 
 .profile{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:4px solid #9aff00;
-    overflow:hidden;
-    margin:0 auto 15px;
-    cursor:pointer;
-}
-
-.profile img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  border:4px solid #fff;
+  object-fit:cover;
+  cursor:pointer;
 }
 
 .name{
-    color:#fff;
-    font-size:26px;
-    margin-bottom:25px;
-    min-height:35px;
+  margin:15px 0 25px;
+  font-size:26px;
+  color:#fff;
+  font-weight:bold;
+  min-height:32px;
 }
 
-.links{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.links a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  margin:12px 0;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.4);
+  color:#fff;
+  text-decoration:none;
+  font-size:18px;
+  background:rgba(0,0,0,0.35);
 }
 
-.link{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:row-reverse;
-    gap:10px;
-    padding:14px;
-    border-radius:15px;
-    color:#fff;
-    text-decoration:none;
-    font-size:18px;
-    background:rgba(255,255,255,0.08);
+.links i{
+  font-size:22px;
 }
 
-.link i,
-.link img{
-    font-size:20px;
-    width:22px;
-    height:22px;
-}
-
-/* Image Popup */
+/* popup */
 .popup{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.85);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
 
 .popup img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:15px;
+  width:90%;
+  max-width:400px;
+  border-radius:20px;
 }
 </style>
 </head>
@@ -115,74 +91,57 @@ body{
 <body>
 
 <div class="overlay">
-    <div class="card">
+  <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg" class="profile" onclick="openImg()">
 
-        <!-- Profile Image -->
-        <div class="profile" onclick="openPopup()">
-            <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
-        </div>
+  <div class="name" id="type"></div>
 
-        <!-- Name -->
-        <div class="name" id="typing"></div>
+  <div class="links">
+    <a href="https://facebook.com" target="_blank">
+      فيسبوك <i class="fab fa-facebook-f"></i>
+    </a>
 
-        <!-- Links -->
-        <div class="links">
+    <a href="https://instagram.com" target="_blank">
+      إنستجرام <i class="fab fa-instagram"></i>
+    </a>
 
-            <a href="https://facebook.com" class="link">
-                فيسبوك
-                <i class="fab fa-facebook-f"></i>
-            </a>
+    <a href="https://t.me" target="_blank">
+      تيليجرام <i class="fab fa-telegram"></i>
+    </a>
 
-            <a href="https://instagram.com" class="link">
-                إنستجرام
-                <i class="fab fa-instagram"></i>
-            </a>
+    <a href="https://wa.me/201000000000" target="_blank">
+      واتساب <i class="fab fa-whatsapp"></i>
+    </a>
 
-            <a href="https://t.me" class="link">
-                تيليجرام
-                <i class="fab fa-telegram-plane"></i>
-            </a>
-
-            <a href="https://wa.me/201000000000" class="link">
-                واتساب
-                <i class="fab fa-whatsapp"></i>
-            </a>
-
-            <a href="https://sarhne.com/YOUR_USERNAME" class="link">
-                صارحني
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Sarhne_icon.png">
-            </a>
-
-        </div>
-
-    </div>
+    <a href="https://h7mksha.sarhne.com" target="_blank">
+      صارحني <i class="fa-regular fa-envelope"></i>
+    </a>
+  </div>
 </div>
 
-<!-- Popup -->
-<div class="popup" id="popup" onclick="closePopup()">
-    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
+<div class="popup" id="popup" onclick="closeImg()">
+  <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
 </div>
 
 <script>
-/* Typing Effect */
+/* typing effect */
 const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
 let i = 0;
-
+const speed = 120;
 function typeWriter(){
-    if(i < text.length){
-        document.getElementById("typing").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 120);
-    }
+  if(i < text.length){
+    document.getElementById("type").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
 }
 typeWriter();
 
-/* Image Popup */
-function openPopup(){
-    document.getElementById("popup").style.display="flex";
+/* image popup */
+function openImg(){
+  document.getElementById("popup").style.display="flex";
 }
-function closePopup(){
-    document.getElementById("popup").style.display="none";
+function closeImg(){
+  document.getElementById("popup").style.display="none";
 }
 </script>
 
