@@ -17,33 +17,19 @@
 
 body{
     min-height:100vh;
-    background:#000;
     background-image:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
     background-repeat:no-repeat;
     background-position:center;
-    background-size:contain; /* الصورة واضحة وكاملة */
+    background-size:contain; /* أوضح حاجة من غير قص */
+    background-color:#000;
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-/* طبقة تحسين وضوح الصورة */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background-image:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:contain;
-    filter: contrast(1.2) brightness(1.15) saturate(1.15);
-    z-index:-1;
-}
-
 /* المربع الشفاف */
 .overlay{
-    background: rgba(0,0,0,0.25); /* شفاف أكتر */
-    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0); /* شفاف 100% */
     padding:30px 25px;
     border-radius:18px;
     width:90%;
@@ -58,6 +44,7 @@ body::before{
     margin-bottom:22px;
     letter-spacing:2px;
     min-height:40px;
+    text-shadow:0 0 6px rgba(0,0,0,0.7);
 }
 
 /* الأزرار */
@@ -68,7 +55,7 @@ body::before{
     gap:12px;
     text-decoration:none;
     color:#fff;
-    border:1px solid rgba(255,255,255,0.5);
+    border:1px solid rgba(255,255,255,0.6);
     padding:14px;
     margin:12px 0;
     border-radius:12px;
@@ -77,8 +64,9 @@ body::before{
     transition:0.3s;
 }
 
-.link i{
-    font-size:20px;
+.link img{
+    width:22px;
+    height:22px;
 }
 
 .link:hover{
@@ -105,12 +93,14 @@ body::before{
         <i class="fa-brands fa-telegram"></i> تليجرام
     </a>
 
-    <a class="link" href="https://wa.me/201285275367?text=%D8%AD%D9%85%D9%88%D9%83%D8%B4%D9%87%E2%9C%A8%E2%99%A5">
+    <a class="link" href="https://wa.me/201285275367">
         <i class="fa-brands fa-whatsapp"></i> واتساب
     </a>
 
+    <!-- أيقونة صارحني الأصلية -->
     <a class="link" href="https://h7mksha.sarhne.com" target="_blank">
-        <i class="fa-solid fa-heart"></i> صارحني
+        <img src="https://sarhne.com/favicon.ico" alt="Sarhne">
+        صارحني
     </a>
 </div>
 
