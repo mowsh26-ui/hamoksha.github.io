@@ -2,111 +2,127 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>HaMoKsHa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HaMoKsHa♡𓅓</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
-body{
-  height:100vh;
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  text-align: center;
+  color: #fff;
   background:
-    linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-    url("https://i.ibb.co/hRVk0MVV/IMG.jpg");
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:#fff;
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('https://i.ibb.co/hRVk0MVV/IMG.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
-.card{
-  background:rgba(0,0,0,0.65);
-  padding:30px;
-  border-radius:22px;
-  width:330px;
-  text-align:center;
-  box-shadow:0 0 30px rgba(255,255,255,0.2);
+.container {
+  margin-top: 80px;
+  background: rgba(0,0,0,0.55);
+  width: 300px;
+  padding: 25px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(6px);
 }
 
-.profile{
-  width:135px;
-  height:135px;
-  border-radius:50%;
-  border:3px solid #fff;
-  object-fit:cover;
-  cursor:pointer;
+.profile-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-h1{
-  margin:20px 0;
-  min-height:38px;
-  font-size:26px;
-  letter-spacing:2px;
+h1 {
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-left: 3px solid #fff;
+  width: 0;
+  margin: 10px auto 20px;
+  animation: typing 3s steps(18) forwards, blink 0.7s infinite;
 }
 
-.links a{
-  display:block;
-  margin:10px 0;
-  padding:12px;
-  border-radius:14px;
-  text-decoration:none;
-  color:#fff;
-  font-size:18px;
-  background:linear-gradient(45deg,#ff004c,#ff9f00);
-  transition:.3s;
+@keyframes typing {
+  from { width: 0 }
+  to { width: 18ch }
+}
+@keyframes blink {
+  50% { border-color: transparent }
 }
 
-.links a:hover{
-  transform:scale(1.06);
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 12px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 12px;
+  transition: 0.3s;
+  font-size: 18px;
 }
 
-/* الصورة العائمة */
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.9);
-  justify-content:center;
-  align-items:center;
-  z-index:999;
+.links a:hover {
+  background: rgba(255,255,255,0.9);
+  color: #000;
 }
 
-.overlay img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:22px;
-  box-shadow:0 0 35px #fff;
+.links i {
+  font-size: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
 
-  <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg"
-       class="profile"
-       onclick="openImg()">
+  <img class="profile-img"
+  src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg"
+  alt="HaMoKsHa">
 
-  <h1 id="name"></h1>
+  <h1>𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</h1>
 
   <div class="links">
-
     <a href="https://www.facebook.com/share/1NRDT7DwbD/" target="_blank">
-      فيسبوك
+      <i class="fab fa-facebook-f"></i> فيسبوك
     </a>
 
     <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
-      إنستجرام
+      <i class="fab fa-instagram"></i> إنستجرام
     </a>
 
+    <a href="https://t.me/Y_T5U" target="_blank">
+      <i class="fab fa-telegram-plane"></i> تيليجرام
+    </a>
+
+    <a href="https://wa.me/201285275367?text=حموكشه✨♥" target="_blank">
+      <i class="fab fa-whatsapp"></i> واتساب
+    </a>
+
+    <a href="https://h7mksha.sarhne.com" target="_blank">
+      <i class="fa-regular fa-envelope"></i> صارحني
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
     <a href="https://t.me/Y_T5U" target="_blank">
       تليجرام
     </a>
@@ -153,3 +169,4 @@ function closeImg(){
 
 </body>
 </html>
+
