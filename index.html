@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HaMoKsHa</title>
 
+<!-- أيقونات Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body{
@@ -24,7 +27,6 @@ body{
     justify-content:center;
 }
 
-/* طبقة خفيفة عشان النص يبان */
 .overlay{
     background: rgba(0,0,0,0.35);
     backdrop-filter: blur(2px);
@@ -35,19 +37,20 @@ body{
     text-align:center;
 }
 
-/* الاسم */
 #name{
     color:#fff;
     font-size:28px;
     font-weight:bold;
     margin-bottom:25px;
     letter-spacing:2px;
-    text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-/* الأزرار */
+/* الزر */
 .link{
-    display:block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
     text-decoration:none;
     color:#fff;
     border:1px solid rgba(255,255,255,0.6);
@@ -55,8 +58,12 @@ body{
     margin:12px 0;
     border-radius:12px;
     font-size:18px;
-    transition:0.3s;
     background: rgba(0,0,0,0.35);
+    transition:0.3s;
+}
+
+.link i{
+    font-size:20px;
 }
 
 .link:hover{
@@ -69,52 +76,27 @@ body{
 <body>
 
 <div class="overlay">
-    <div id="name"></div>
+    <div id="name">𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</div>
 
-    <!-- روابطك -->
-    <a class="link" href="#" target="_blank">فيسبوك</a>
-    <a class="link" href="#" target="_blank">إنستجرام</a>
-    <a class="link" href="#" target="_blank">تليجرام</a>
-    <a class="link" href="#" target="_blank">واتساب</a>
-</div>
-
-<script>
-const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
-let i = 0;
-const speed = 150;
-const nameDiv = document.getElementById("name");
-
-function typeWriter(){
-    if(i < text.length){
-        nameDiv.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    } else {
-        setTimeout(()=>{
-            nameDiv.innerHTML = "";
-            i = 0;
-            typeWriter();
-        }, 1500);
-    }
-}
-
-typeWriter();
-</script>
-
-</body>
-</html>    <a href="https://t.me/Y_T5U" target="_blank">
-      <i class="fab fa-telegram-plane"></i> تيليجرام
+    <a class="link" href="#">
+        <i class="fa-brands fa-facebook"></i>
+        فيسبوك
     </a>
 
-    <a href="https://wa.me/201285275367?text=حموكشه✨♥" target="_blank">
-      <i class="fab fa-whatsapp"></i> واتساب
+    <a class="link" href="#">
+        <i class="fa-brands fa-instagram"></i>
+        إنستجرام
     </a>
 
-    <a href="https://h7mksha.sarhne.com" target="_blank">
-      <i class="fa-regular fa-envelope"></i> صارحني
+    <a class="link" href="#">
+        <i class="fa-brands fa-telegram"></i>
+        تليجرام
     </a>
-  </div>
 
+    <a class="link" href="#">
+        <i class="fa-brands fa-whatsapp"></i>
+        واتساب
+    </a>
 </div>
 
 </body>
