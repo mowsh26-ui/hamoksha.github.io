@@ -3,110 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HaMoKsHa♡𓅓</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>HaMoKsHa</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-body {
-  margin: 0;
-  font-family: 'Cairo', sans-serif;
-  direction: rtl;
-  text-align: center;
-  color: #fff;
-  background:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('https://i.ibb.co/hRVk0MVV/IMG.jpg') no-repeat center center fixed;
-  background-size: cover;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.container {
-  margin-top: 80px;
-  background: rgba(0,0,0,0.55);
-  width: 300px;
-  padding: 25px;
-  border-radius: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  backdrop-filter: blur(6px);
+body{
+    min-height:100vh;
+    background-image: url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.profile-img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  object-fit: cover;
-  margin-bottom: 15px;
+/* طبقة خفيفة عشان النص يبان */
+.overlay{
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(2px);
+    padding:30px 25px;
+    border-radius:18px;
+    width:90%;
+    max-width:360px;
+    text-align:center;
 }
 
-h1 {
-  font-size: 28px;
-  white-space: nowrap;
-  overflow: hidden;
-  border-left: 3px solid #fff;
-  width: 0;
-  margin: 10px auto 20px;
-  animation: typing 3s steps(18) forwards, blink 0.7s infinite;
+/* الاسم */
+#name{
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:25px;
+    letter-spacing:2px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 18ch }
-}
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-.links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 10px 0;
-  padding: 12px;
-  text-decoration: none;
-  color: #fff;
-  background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.4);
-  border-radius: 12px;
-  transition: 0.3s;
-  font-size: 18px;
+/* الأزرار */
+.link{
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.6);
+    padding:14px;
+    margin:12px 0;
+    border-radius:12px;
+    font-size:18px;
+    transition:0.3s;
+    background: rgba(0,0,0,0.35);
 }
 
-.links a:hover {
-  background: rgba(255,255,255,0.9);
-  color: #000;
-}
-
-.links i {
-  font-size: 20px;
+.link:hover{
+    background: rgba(255,255,255,0.15);
+    transform: scale(1.04);
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="overlay">
+    <div id="name"></div>
 
-  <img class="profile-img"
-  src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg"
-  alt="HaMoKsHa">
+    <!-- روابطك -->
+    <a class="link" href="#" target="_blank">فيسبوك</a>
+    <a class="link" href="#" target="_blank">إنستجرام</a>
+    <a class="link" href="#" target="_blank">تليجرام</a>
+    <a class="link" href="#" target="_blank">واتساب</a>
+</div>
 
-  <h1>𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</h1>
+<script>
+const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
+let i = 0;
+const speed = 150;
+const nameDiv = document.getElementById("name");
 
-  <div class="links">
-    <a href="https://www.facebook.com/share/1NRDT7DwbD/" target="_blank">
-      <i class="fab fa-facebook-f"></i> فيسبوك
-    </a>
+function typeWriter(){
+    if(i < text.length){
+        nameDiv.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    } else {
+        setTimeout(()=>{
+            nameDiv.innerHTML = "";
+            i = 0;
+            typeWriter();
+        }, 1500);
+    }
+}
 
-    <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
-      <i class="fab fa-instagram"></i> إنستجرام
-    </a>
+typeWriter();
+</script>
 
-    <a href="https://t.me/Y_T5U" target="_blank">
+</body>
+</html>    <a href="https://t.me/Y_T5U" target="_blank">
       <i class="fab fa-telegram-plane"></i> تيليجرام
     </a>
 
