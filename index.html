@@ -2,76 +2,112 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HaMoKsHa</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- أيقونات -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, sans-serif;
+    font-family:'Playfair Display', serif;
 }
 
 body{
     min-height:100vh;
-    background-image:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:contain; /* أوضح حاجة من غير قص */
-    background-color:#000;
+    background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    color:white;
 }
 
-/* المربع الشفاف */
 .overlay{
-    background: rgba(0,0,0,0); /* شفاف 100% */
-    padding:30px 25px;
-    border-radius:18px;
-    width:90%;
-    max-width:360px;
+    background:rgba(0,0,0,0.35);
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter: blur(6px);
+    border-radius:20px;
+    padding:25px;
+    width:330px;
     text-align:center;
 }
 
-/* الاسم */
-#name{
-    color:#fff;
-    font-size:26px;
-    margin-bottom:22px;
-    letter-spacing:2px;
-    min-height:40px;
-    text-shadow:0 0 6px rgba(0,0,0,0.7);
+.profile img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #fff;
+    cursor:pointer;
 }
 
-/* الأزرار */
+#name{
+    margin:15px 0 10px;
+    font-size:26px;
+    letter-spacing:2px;
+    min-height:35px;
+}
+
+.bio{
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:15px;
+}
+
+.links{
+    display:flex;
+    justify-content:space-around;
+    margin-top:15px;
+}
+
 .link{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:12px;
     text-decoration:none;
-    color:#fff;
-    border:1px solid rgba(255,255,255,0.6);
-    padding:14px;
-    margin:12px 0;
-    border-radius:12px;
-    font-size:18px;
-    background: rgba(0,0,0,0.15);
-    transition:0.3s;
+    color:white;
+    font-size:22px;
 }
 
 .link img{
-    width:22px;
-    height:22px;
+    width:24px;
+    height:24px;
+    filter: grayscale(100%) brightness(1.4);
+    opacity:0.85;
 }
 
-.link:hover{
-    background: rgba(255,255,255,0.15);
-    transform: scale(1.04);
+/* صورة عائمة */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
 }
 </style>
 </head>
@@ -79,52 +115,68 @@ body{
 <body>
 
 <div class="overlay">
-    <div id="name"></div>
+<div class="card">
 
-    <a class="link" href="https://www.facebook.com">
-        <i class="fa-brands fa-facebook"></i> فيسبوك
-    </a>
+<div class="profile">
+<img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg" onclick="openImg()">
+</div>
 
-    <a class="link" href="https://www.instagram.com/mo.wael.sh">
-        <i class="fa-brands fa-instagram"></i> إنستجرام
-    </a>
+<h1 id="name"></h1>
 
-    <a class="link" href="https://t.me/Y_T5U">
-        <i class="fa-brands fa-telegram"></i> تليجرام
-    </a>
+<p class="bio">
+كن قويًا كطبيب، يجري عملية جراحية لمعلم قال له ذات يوم أنت فاشل 💪🏻❤️
+</p>
 
-    <a class="link" href="https://wa.me/201285275367">
-        <i class="fa-brands fa-whatsapp"></i> واتساب
-    </a>
+<div class="links">
+<a class="link" href="https://www.facebook.com/share/1NRDT7DwbD/" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-    <!-- أيقونة صارحني الأصلية -->
-    <a class="link" href="https://h7mksha.sarhne.com" target="_blank">
-        <img src="https://sarhne.com/favicon.ico" alt="Sarhne">
-        صارحني
-    </a>
+<a class="link" href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a class="link" href="https://t.me/Y_T5U" target="_blank">
+<i class="fab fa-telegram"></i>
+</a>
+
+<a class="link" href="https://wa.me/201285275367?text=حموكشه✨♥" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a class="link" href="https://h7mksha.sarhne.com" target="_blank">
+<img src="https://sarhne.com/favicon.ico">
+</a>
+</div>
+
+</div>
+</div>
+
+<!-- الصورة العائمة -->
+<div class="modal" id="modal" onclick="closeImg()">
+<img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
 </div>
 
 <script>
 const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
 let i = 0;
-const speed = 140;
-const nameDiv = document.getElementById("name");
+const speed = 150;
 
-function typeWriter(){
+function type(){
     if(i < text.length){
-        nameDiv.innerHTML += text.charAt(i);
+        document.getElementById("name").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, speed);
-    } else {
-        setTimeout(()=>{
-            nameDiv.innerHTML = "";
-            i = 0;
-            typeWriter();
-        }, 1500);
+        setTimeout(type, speed);
     }
 }
+type();
 
-typeWriter();
+function openImg(){
+    document.getElementById("modal").style.display="flex";
+}
+function closeImg(){
+    document.getElementById("modal").style.display="none";
+}
 </script>
 
 </body>
