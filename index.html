@@ -17,24 +17,10 @@
 
 body{
     min-height:100vh;
-    background-color:#000;
-    background-image:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg");
-    background-repeat:no-repeat;
-    background-position:center;
-    background-size:contain; /* 👈 الصورة أصغر وواضحة */
+    background:#000 url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/contain no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
-}
-
-/* طبقة تحسين الوضوح */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:inherit;
-    filter: contrast(1.15) brightness(1.08) saturate(1.1);
-    z-index:-1;
 }
 
 .overlay{
@@ -50,11 +36,12 @@ body::before{
 #name{
     color:#fff;
     font-size:26px;
-    font-weight:bold;
     margin-bottom:22px;
     letter-spacing:2px;
+    min-height:40px;
 }
 
+/* الأزرار */
 .link{
     display:flex;
     align-items:center;
@@ -85,7 +72,7 @@ body::before{
 <body>
 
 <div class="overlay">
-    <div id="name">𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</div>
+    <div id="name"></div>
 
     <a class="link" href="https://www.facebook.com">
         <i class="fa-brands fa-facebook"></i> فيسبوك
@@ -95,15 +82,38 @@ body::before{
         <i class="fa-brands fa-instagram"></i> إنستجرام
     </a>
 
-    <a class="link" href="https://t.me">
+    <a class="link" href="https://t.me/Y_T5U">
         <i class="fa-brands fa-telegram"></i> تليجرام
     </a>
 
-    <!-- ✅ صارحني شغال -->
-    <a class="link" href="https://sarhne.com">
+    <!-- رابط صارحني الحقيقي -->
+    <a class="link" href="https://h7mksha.sarhne.com" target="_blank">
         <i class="fa-solid fa-heart"></i> صارحني
     </a>
 </div>
+
+<script>
+const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
+let i = 0;
+const speed = 140;
+const nameDiv = document.getElementById("name");
+
+function typeWriter(){
+    if(i < text.length){
+        nameDiv.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    } else {
+        setTimeout(()=>{
+            nameDiv.innerHTML = "";
+            i = 0;
+            typeWriter();
+        }, 1500);
+    }
+}
+
+typeWriter();
+</script>
 
 </body>
 </html>
