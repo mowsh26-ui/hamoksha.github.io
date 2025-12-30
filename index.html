@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HaMoKsHa</title>
 
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -16,21 +13,21 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Cairo', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body{
     min-height:100vh;
-    background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat fixed;
+    background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
 .overlay{
-    background:rgba(0,0,0,0.45);
     width:100%;
     min-height:100vh;
+    background:rgba(0,0,0,0.45);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -38,24 +35,25 @@ body{
 
 .card{
     width:90%;
-    max-width:380px;
+    max-width:400px;
     background:rgba(0,0,0,0.35);
-    border-radius:20px;
+    border-radius:25px;
     padding:25px 15px;
     text-align:center;
+    backdrop-filter: blur(6px);
 }
 
-.profile-img{
+.profile{
     width:140px;
     height:140px;
     border-radius:50%;
+    border:4px solid #9aff00;
     overflow:hidden;
     margin:0 auto 15px;
-    border:4px solid #b6ff2b;
     cursor:pointer;
 }
 
-.profile-img img{
+.profile img{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -64,27 +62,28 @@ body{
 .name{
     color:#fff;
     font-size:26px;
-    font-weight:700;
     margin-bottom:25px;
+    min-height:35px;
 }
 
 .links{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:15px;
 }
 
 .link{
     display:flex;
     justify-content:center;
     align-items:center;
+    flex-direction:row-reverse;
     gap:10px;
-    color:#fff;
-    text-decoration:none;
     padding:14px;
     border-radius:15px;
-    background:rgba(255,255,255,0.08);
+    color:#fff;
+    text-decoration:none;
     font-size:18px;
+    background:rgba(255,255,255,0.08);
 }
 
 .link i,
@@ -94,13 +93,10 @@ body{
     height:22px;
 }
 
-/* Popup */
+/* Image Popup */
 .popup{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:rgba(0,0,0,0.85);
     display:none;
     justify-content:center;
@@ -111,7 +107,7 @@ body{
 .popup img{
     max-width:90%;
     max-height:90%;
-    border-radius:20px;
+    border-radius:15px;
 }
 </style>
 </head>
@@ -122,51 +118,70 @@ body{
     <div class="card">
 
         <!-- Profile Image -->
-        <div class="profile-img" onclick="openImg()">
+        <div class="profile" onclick="openPopup()">
             <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
         </div>
 
         <!-- Name -->
-        <div class="name">HaMoKsHa♡🦅</div>
+        <div class="name" id="typing"></div>
 
         <!-- Links -->
         <div class="links">
 
-            <a href="#" class="link">
-                فيسبوك <i class="fab fa-facebook-f"></i>
+            <a href="https://facebook.com" class="link">
+                فيسبوك
+                <i class="fab fa-facebook-f"></i>
             </a>
 
-            <a href="#" class="link">
-                إنستجرام <i class="fab fa-instagram"></i>
+            <a href="https://instagram.com" class="link">
+                إنستجرام
+                <i class="fab fa-instagram"></i>
             </a>
 
-            <a href="#" class="link">
-                تيليجرام <i class="fab fa-telegram-plane"></i>
+            <a href="https://t.me" class="link">
+                تيليجرام
+                <i class="fab fa-telegram-plane"></i>
             </a>
 
-            <a href="#" class="link">
-                واتساب <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/201000000000" class="link">
+                واتساب
+                <i class="fab fa-whatsapp"></i>
             </a>
 
             <a href="https://sarhne.com/YOUR_USERNAME" class="link">
                 صارحني
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Sarhne_logo.png">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Sarhne_icon.png">
             </a>
 
         </div>
+
     </div>
 </div>
 
-<!-- Image Popup -->
-<div class="popup" id="popup" onclick="closeImg()">
+<!-- Popup -->
+<div class="popup" id="popup" onclick="closePopup()">
     <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
 </div>
 
 <script>
-function openImg(){
+/* Typing Effect */
+const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
+let i = 0;
+
+function typeWriter(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 120);
+    }
+}
+typeWriter();
+
+/* Image Popup */
+function openPopup(){
     document.getElementById("popup").style.display="flex";
 }
-function closeImg(){
+function closePopup(){
     document.getElementById("popup").style.display="none";
 }
 </script>
