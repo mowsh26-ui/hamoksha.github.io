@@ -2,164 +2,187 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>HaMoKsHa</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-    background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") no-repeat center center fixed;
-    background-size:cover;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  font-family:'Cairo',sans-serif;
+  background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat fixed;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  direction:rtl;
+}
+
+.overlay{
+  background:rgba(0,0,0,0.35);
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .container{
-    width:100%;
-    max-width:400px;
-    padding:20px;
-    text-align:center;
-    background:rgba(0,0,0,0.35);
-    border-radius:20px;
+  width:100%;
+  max-width:420px;
+  text-align:center;
+  padding:30px 20px;
 }
 
-.profile-img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #fff;
-    cursor:pointer;
-    margin-bottom:15px;
+.profile-pic{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid #fff;
+  object-fit:cover;
+  cursor:pointer;
 }
 
-#name{
-    font-size:26px;
-    color:#fff;
-    margin-bottom:25px;
-    min-height:35px;
+.name{
+  font-size:32px;
+  margin:20px 0 10px;
+  min-height:45px;
+}
+
+.bio{
+  font-size:18px;
+  margin-bottom:25px;
 }
 
 .links{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
 }
 
 .links a{
-    text-decoration:none;
-    color:#fff;
-    background:rgba(255,255,255,0.08);
-    padding:14px;
-    border-radius:12px;
-    font-size:18px;
+  text-decoration:none;
+  color:#fff;
+  background:rgba(255,255,255,0.08);
+  padding:14px;
+  border-radius:14px;
+  font-size:18px;
 
-    display:flex;
-    flex-direction:row-reverse; /* ⭐⭐ الحل النهائي */
-    justify-content:center;
-    align-items:center;
-    gap:10px;
+  display:flex;
+  flex-direction:row-reverse; /* عكس الأيقونة */
+  align-items:center;
+  justify-content:center;
+  gap:10px;
 
-    transition:0.3s;
+  direction:ltr; /* ⭐ الحل النهائي */
+  text-align:center;
+
+  transition:0.3s;
 }
 
 .links a:hover{
-    background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.18);
 }
 
-.links a i{
-    font-size:18px;
+.links i{
+  font-size:20px;
 }
 
+/* نافذة تكبير الصورة */
 .modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.85);
-    justify-content:center;
-    align-items:center;
-    z-index:999;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
+  z-index:999;
 }
 
 .modal img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:20px;
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="overlay">
+  <div class="container">
 
-    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg" class="profile-img" onclick="openImg()">
+    <!-- الصورة -->
+    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg" class="profile-pic" onclick="openImg()">
 
-    <div id="name"></div>
+    <!-- الاسم -->
+    <div class="name" id="typeName"></div>
 
-    <div class="links">
-
-        <a href="https://www.facebook.com/share/1FHAZF2aZN/" target="_blank">
-            <i class="fa-brands fa-facebook-f"></i>
-            <span>فيسبوك</span>
-        </a>
-
-        <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-            <span>إنستجرام</span>
-        </a>
-
-        <a href="https://t.me/Y_T5U" target="_blank">
-            <i class="fa-brands fa-telegram"></i>
-            <span>تليجرام</span>
-        </a>
-
-        <a href="https://wa.me/201285275367?text=%D8%AD%D9%85%D9%88%D9%83%D8%B4%D9%87%E2%9C%A8%E2%99%A5" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>واتساب</span>
-        </a>
-
-        <a href="https://h7mksha.sarhne.com" target="_blank">
-            <i class="fa-regular fa-envelope"></i>
-            <span>صارحني</span>
-        </a>
-
+    <!-- النبذة -->
+    <div class="bio">
+      كن قوياً كطبيب، يجري عملية جراحية لمعلم قال له ذات يوم انت فاشل 💪🏻❤️‍
     </div>
 
+    <!-- الروابط -->
+    <div class="links">
+      <a href="https://www.facebook.com/share/1FHAZF2aZN/" target="_blank">
+        فيسبوك <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
+        إنستجرام <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://t.me/Y_T5U" target="_blank">
+        تيليجرام <i class="fab fa-telegram-plane"></i>
+      </a>
+
+      <a href="https://wa.me/201285275367?text=حموكشه✨♥" target="_blank">
+        واتساب <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a href="https://h7mksha.sarhne.com" target="_blank">
+        صارحني <i class="fa-regular fa-envelope"></i>
+      </a>
+    </div>
+
+  </div>
 </div>
 
+<!-- تكبير الصورة -->
 <div class="modal" id="imgModal" onclick="closeImg()">
-    <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
+  <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
 </div>
 
 <script>
+/* كتابة الاسم حرف حرف */
 const text = "𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
 let i = 0;
-
-function typeName(){
-    if(i < text.length){
-        document.getElementById("name").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeName, 180);
-    }
+function typeEffect(){
+  if(i < text.length){
+    document.getElementById("typeName").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect,120);
+  }
 }
-typeName();
+typeEffect();
 
+/* فتح الصورة */
 function openImg(){
-    document.getElementById("imgModal").style.display = "flex";
+  document.getElementById("imgModal").style.display="flex";
 }
 function closeImg(){
-    document.getElementById("imgModal").style.display = "none";
+  document.getElementById("imgModal").style.display="none";
 }
 </script>
 
