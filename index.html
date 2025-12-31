@@ -65,25 +65,20 @@ body{
     font-size:18px;
 
     display:flex;
+    flex-direction:row-reverse; /* ⭐⭐ الحل النهائي */
     justify-content:center;
     align-items:center;
-    flex-direction:row; /* مهم */
     gap:10px;
 
     transition:0.3s;
 }
 
-.links a span{
-    order:1; /* الاسم */
+.links a:hover{
+    background:rgba(255,255,255,0.2);
 }
 
 .links a i{
-    order:2; /* الأيقونة بعد الاسم */
     font-size:18px;
-}
-
-.links a:hover{
-    background:rgba(255,255,255,0.2);
 }
 
 .modal{
@@ -115,28 +110,28 @@ body{
     <div class="links">
 
         <a href="https://www.facebook.com/share/1FHAZF2aZN/" target="_blank">
-            <span>فيسبوك</span>
             <i class="fa-brands fa-facebook-f"></i>
+            <span>فيسبوك</span>
         </a>
 
         <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
-            <span>إنستجرام</span>
             <i class="fa-brands fa-instagram"></i>
+            <span>إنستجرام</span>
         </a>
 
         <a href="https://t.me/Y_T5U" target="_blank">
-            <span>تليجرام</span>
             <i class="fa-brands fa-telegram"></i>
+            <span>تليجرام</span>
         </a>
 
         <a href="https://wa.me/201285275367?text=%D8%AD%D9%85%D9%88%D9%83%D8%B4%D9%87%E2%9C%A8%E2%99%A5" target="_blank">
-            <span>واتساب</span>
             <i class="fa-brands fa-whatsapp"></i>
+            <span>واتساب</span>
         </a>
 
         <a href="https://h7mksha.sarhne.com" target="_blank">
-            <span>صارحني</span>
             <i class="fa-regular fa-envelope"></i>
+            <span>صارحني</span>
         </a>
 
     </div>
