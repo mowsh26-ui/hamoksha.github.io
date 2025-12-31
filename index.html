@@ -18,16 +18,12 @@ body{
   font-family:'Cairo',sans-serif;
   background:url("https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg") center/cover no-repeat fixed;
   min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   color:#fff;
   direction:rtl;
 }
 
 .overlay{
   background:rgba(0,0,0,0.35);
-  width:100%;
   min-height:100vh;
   display:flex;
   justify-content:center;
@@ -35,8 +31,8 @@ body{
 }
 
 .container{
-  width:100%;
   max-width:420px;
+  width:100%;
   text-align:center;
   padding:30px 20px;
 }
@@ -74,17 +70,8 @@ body{
   padding:14px;
   border-radius:14px;
   font-size:18px;
-
-  display:flex;
-  flex-direction:row-reverse; /* عكس الأيقونة */
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  direction:ltr; /* ⭐ الحل النهائي */
-  text-align:center;
-
   transition:0.3s;
+  text-align:center;
 }
 
 .links a:hover{
@@ -92,7 +79,7 @@ body{
 }
 
 .links i{
-  font-size:20px;
+  margin-right:8px; /* مسافة بسيطة قبل الأيقونة */
 }
 
 /* نافذة تكبير الصورة */
@@ -133,8 +120,9 @@ body{
       كن قوياً كطبيب، يجري عملية جراحية لمعلم قال له ذات يوم انت فاشل 💪🏻❤️‍
     </div>
 
-    <!-- الروابط -->
+    <!-- الروابط (الأيقونة بعد الاسم فعليًا) -->
     <div class="links">
+
       <a href="https://www.facebook.com/share/1FHAZF2aZN/" target="_blank">
         فيسبوك <i class="fab fa-facebook-f"></i>
       </a>
@@ -154,6 +142,7 @@ body{
       <a href="https://h7mksha.sarhne.com" target="_blank">
         صارحني <i class="fa-regular fa-envelope"></i>
       </a>
+
     </div>
 
   </div>
