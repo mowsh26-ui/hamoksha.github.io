@@ -63,14 +63,22 @@ body{
     padding:14px;
     border-radius:12px;
     font-size:18px;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:8px;
+    flex-direction:row; /* مهم */
+    gap:10px;
+
     transition:0.3s;
 }
 
+.links a span{
+    order:1; /* الاسم */
+}
+
 .links a i{
+    order:2; /* الأيقونة بعد الاسم */
     font-size:18px;
 }
 
@@ -107,23 +115,28 @@ body{
     <div class="links">
 
         <a href="https://www.facebook.com/share/1FHAZF2aZN/" target="_blank">
-            فيسبوك <i class="fa-brands fa-facebook-f"></i>
+            <span>فيسبوك</span>
+            <i class="fa-brands fa-facebook-f"></i>
         </a>
 
         <a href="https://www.instagram.com/mo.wael.sh?igsh=MXNmNWk4djNtZzVrMQ==" target="_blank">
-            إنستجرام <i class="fa-brands fa-instagram"></i>
+            <span>إنستجرام</span>
+            <i class="fa-brands fa-instagram"></i>
         </a>
 
         <a href="https://t.me/Y_T5U" target="_blank">
-            تليجرام <i class="fa-brands fa-telegram"></i>
+            <span>تليجرام</span>
+            <i class="fa-brands fa-telegram"></i>
         </a>
 
         <a href="https://wa.me/201285275367?text=%D8%AD%D9%85%D9%88%D9%83%D8%B4%D9%87%E2%9C%A8%E2%99%A5" target="_blank">
-            واتساب <i class="fa-brands fa-whatsapp"></i>
+            <span>واتساب</span>
+            <i class="fa-brands fa-whatsapp"></i>
         </a>
 
         <a href="https://h7mksha.sarhne.com" target="_blank">
-            صارحني <i class="fa-regular fa-envelope"></i>
+            <span>صارحني</span>
+            <i class="fa-regular fa-envelope"></i>
         </a>
 
     </div>
