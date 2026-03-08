@@ -82,7 +82,6 @@ body{
   margin-right:8px;
 }
 
-/* نافذة تكبير الصورة */
 .modal{
   display:none;
   position:fixed;
@@ -109,18 +108,14 @@ body{
 <div class="overlay">
   <div class="container">
 
-    <!-- الصورة -->
     <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg" class="profile-pic" onclick="openImg()">
 
-    <!-- الاسم -->
     <div class="name" id="typeName"></div>
 
-    <!-- النبذة -->
     <div class="bio">
       كن قوياً كطبيب، يجري عملية جراحية لمعلم قال له ذات يوم انت فاشل 💪🏻❤️‍
     </div>
 
-    <!-- الروابط -->
     <div class="links">
 
       <a href="https://www.facebook.com/share/1FHAZF2aZN/" target="_blank">
@@ -135,7 +130,7 @@ body{
         تيليجرام <i class="fab fa-telegram-plane"></i>
       </a>
 
-      <a href="https://wa.me/201285275367?text=حموكشه✨♥" target="_blank">
+      <a href="https://wa.me/201505030407?text=%D8%AD%D9%85%D9%88%D9%83%D8%B4%D9%87%E2%9C%A8%E2%99%A5" target="_blank">
         واتساب <i class="fab fa-whatsapp"></i>
       </a>
 
@@ -148,15 +143,15 @@ body{
   </div>
 </div>
 
-<!-- تكبير الصورة -->
 <div class="modal" id="imgModal" onclick="closeImg()">
   <img src="https://i.ibb.co/FbWy83Km/IMG-20250418-WA0031.jpg">
 </div>
 
 <script>
-/* كتابة الاسم حرف حرف */
+
 const text = "١٤٢٧ه‍|𝑯𝒂𝑴𝒐𝑲𝒔𝑯𝒂♡𓅓";
 let i = 0;
+
 function typeEffect(){
   if(i < text.length){
     document.getElementById("typeName").innerHTML += text.charAt(i);
@@ -164,15 +159,17 @@ function typeEffect(){
     setTimeout(typeEffect,120);
   }
 }
+
 typeEffect();
 
-/* فتح الصورة */
 function openImg(){
   document.getElementById("imgModal").style.display="flex";
 }
+
 function closeImg(){
   document.getElementById("imgModal").style.display="none";
 }
+
 </script>
 
 </body>
