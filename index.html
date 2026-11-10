@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -130,9 +131,9 @@ body{
         تيليجرام <i class="fab fa-telegram-plane"></i>
       </a>
 
-      <a href="https://wa.me/201285275367?text=%D8%AD%D9%90%DD%A6%DB%85%DA%AA%DB%BA%DB%BF%E2%9C%A8%E2%99%A5." target="_blank">
-  واتساب <i class="fab fa-whatsapp"></i>
-</a>
+      <a id="whatsappLink" href="#" target="_blank">
+        واتساب <i class="fab fa-whatsapp"></i>
+      </a>
 
       <a href="https://h7mksha.sarhne.com" target="_blank">
         صارحني <i class="fa-regular fa-envelope"></i>
@@ -169,6 +170,13 @@ function openImg(){
 function closeImg(){
   document.getElementById("imgModal").style.display="none";
 }
+
+/* WhatsApp message */
+const whatsappMessage = "حِݦۅڪۺۿ✨♥.";
+
+document.getElementById("whatsappLink").href =
+  "https://wa.me/201285275367?text=" +
+  encodeURIComponent(whatsappMessage);
 
 </script>
 
