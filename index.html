@@ -172,11 +172,12 @@ function closeImg(){
 }
 
 /* WhatsApp message */
-const whatsappMessage = "حِݦۅڪۺۿ✨♥.";
+const whatsappMessage = "(*حِݦۅڪۺۿ♥✨.*)";
 
-document.getElementById("whatsappLink").href =
-  "https://wa.me/201285275367?text=" +
-  encodeURIComponent(whatsappMessage);
+const whatsappURL = new URL("https://wa.me/201285275367");
+whatsappURL.searchParams.set("text", whatsappMessage);
+
+document.getElementById("whatsappLink").href = whatsappURL.toString();
 
 </script>
 
