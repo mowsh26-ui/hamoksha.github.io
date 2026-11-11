@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -173,7 +172,9 @@ function closeImg(){
 
 /* WhatsApp message */
 const whatsappMessage = "*حِݦۅڪۺۿ❤️✨.*";
-const whatsappURL = "https://wa.me/201285275367?text=%2A%D8%AD%D9%90%DD%A6%DB%85%DA%AA%DB%BA%DB%BF%E2%99%A5%E2%9C%A8.%2A";
+
+const whatsappURL = "https://wa.me/201285275367?text=" + encodeURIComponent(whatsappMessage);
+
 document.getElementById("whatsappLink").href = whatsappURL;
 
 </script>
